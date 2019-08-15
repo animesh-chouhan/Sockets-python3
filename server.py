@@ -9,6 +9,6 @@ print(f"Server running on port {serverPort}")
 
 while True:
     message, clientAddress = serverSocket.recvfrom(2048)
-    print(message.decode())
+    print(message.decode("utf-8"))
     clientMessage = f"Hi there {clientAddress}"
     serverSocket.sendto(clientMessage.encode(), clientAddress)
